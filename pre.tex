@@ -1,0 +1,433 @@
+\documentclass{beamer}
+\usepackage{xeCJK}
+\usepackage{enumitem}
+\usepackage{animate}
+
+\definecolor{hrefcol}{RGB}{0, 0, 255} % Example: blue color
+
+% meta-data
+\title{SQL DATU TIPI}
+%\subtitle{Using \LaTeX\ to prepare slides}
+\author{\href{mailto:Ance.Tetere@csp.gov.lv}{Ance Tetere}}
+\date{16. maijs, 2025}
+
+% document body
+\begin{document}
+
+    \maketitle
+
+    \begin{frame}
+            \vspace{-1cm}
+            \centering Kura ir visgrūtākā programmēšanas valoda? \\ \pause
+            \vspace{5mm}
+            \centering \color[RGB]{112, 0, 0}{Pirmā programmēšanas valoda.}
+    \end{frame}
+
+ %   \begin{frame}
+ %       This template is a secondary creation of \bhref{https://www.overleaf.com/latex/templates/sintef-presentation/jhbhdffczpnx}{SINTEF Presentation} template from \bhref{mailto:federico.zenith@sintef.no}{Federico Zenith} \vspace{\baselineskip}
+
+ %       Following is a brief introduction written by \bhref{mailto:federico.zenith@sintef.no}{Federico Zenith} about how to use \LaTeX\ and beamer to prepare slides. All rights reserved by him\vspace{\baselineskip}
+
+%        This template is released under \bhref{https://creativecommons.org/licenses/by-nc/4.0/legalcode}{Creative Commons CC BY 4.0} license
+%    \end{frame}
+
+    \section{Programmēšana valoda}
+
+    \begin{frame}
+    \centering
+    \vspace{-2cm}
+    \includegraphics[width=5cm]{gallery/R_book.jpg}
+    \end{frame}
+
+    \begin{frame}{Programmēšana valoda}
+    \vspace{-2.5cm}
+    \hspace{11.5cm}
+    \includegraphics[width=2cm]{gallery/R_book.jpg}\\
+\vspace{0.5cm}
+\hspace{1cm}
+    "Šajā projektā jūs esat arī iemācījušies runāt ar datoru. \pause 
+    SQL ir valoda \\ \vspace{0.1cm} \hspace{1cm} tāpat kā angļu, spāņu vai vācu, izņemot to, ka tajā runā ar mašīnām.\\ \pause \vspace{0.1cm}
+    \hspace{1cm} Jūs esat iepazinušies ar šīs valodas lietvārdiem - objektiem. \pause Un, cerams, \\ \vspace{0.1cm} \hspace{1cm} ka uzminējāt, ka funkcijas ir darbības vārdi. \pause Vai argumenti funkcijā var- \\ \vspace{0.1cm} \hspace{1cm} ētu būtu apstākļa vārdi? 
+    \end{frame}
+
+    \begin{frame}{Programmēšana valoda}
+    \vspace{-1.5cm}
+    \hspace{11.5cm}
+    \includegraphics[width=2cm]{gallery/R_book.jpg}\\
+\vspace{-0.5cm}
+\hspace{1cm}
+    Darbības vārdi kopā ar lietvārdiem veido teikumu. \\ \pause 
+    \vspace{0.4cm}
+    \hspace{1cm} 
+    Apvienojot funkcijas ar objektiem, jūs izsakāt veselu domu. \\ \pause 
+    \vspace{0.4cm}
+    \hspace{1cm} 
+    Kārtojot domas loģiskā secībā, jūs attīstāt argumentu. \\ \pause
+    \vspace{0.4cm}
+    \hspace{1cm}
+     \onslide<1->{Attīstot argumentu SQL, jūs rakstāt elegantu kodu."} \\ 
+    \vspace{0.4cm}
+    \hspace{6cm} (pārfrāzēts no \bhref{https://rstudio-education.github.io/hopr/}{Grolemund, 2014}, 34.\,lpp.) \\
+    \end{frame}
+
+\section{SQL valoda}
+  \begin{frame}{SQL valoda}
+\vspace{-0.3cm}
+    \centering 
+    \color[RGB]{112, 0, 0}{\textbf{SQL ir programmēšanas valoda.}} \\ \pause
+    \vspace{0.4cm}
+    \color[RGB]{1, 0, 92}{\textbf{Structured Query Language.}}\\ \pause
+    \vspace{0.4cm} 
+        \color[RGB]{112, 0, 0}{\textbf{Strukturēta vaicājumu valoda.}}
+    \end{frame}
+
+    \begin{frame}{SQL valoda}
+      \vspace{-0.5cm}
+      \hspace{1cm}
+        SQL ir strukturēta vaicājumu valoda:
+        \vspace{0.3cm}
+        {\setlist[itemize]{left=1.3cm}
+        \begin{itemize}
+         \item[\textbullet] SQL lietvārdi: datubāzes tabulas, atribūti, shēmas.
+        \item[\textbullet] SQL darbības vārdi: \texttt{LEN()}, \texttt{COUNT()}, \texttt{DATEDIFF()}.
+ \end{itemize}}
+    \end{frame}
+
+
+    \begin{frame}{SQL valoda}
+      \vspace{-0.5cm}
+      \hspace{1cm}
+        {\setlist[itemize]{left=1.3cm}
+        \begin{itemize}
+         \item[\textbullet] SQL lietvārdi: datubāzes tabulas, atribūti, shēmas.\\ \vspace{0.5cm}
+        \hspace{2cm} \emph{Datubāzes objekti}: 
+        %\\ \vspace{0.1cm} \hspace{2cm} 
+        SQL darbojas ar ierakstu kopām. \\ \pause \vspace{0.5cm}
+        \item[\textbullet] SQL darbības vārdi: \texttt{LEN()}, \texttt{COUNT()}, \texttt{DATEDIFF()}. \\ \vspace{0.5cm}
+        \hspace{2cm} \emph{T-SQL}: 
+        %\\ \vspace{0.1cm} \hspace{2cm} 
+        Funkcijas nodrošina procedūras ar tiem. \\ 
+ \end{itemize}}
+ \end{frame}
+ 
+  \begin{frame}{SQL valoda}
+  \centering 
+  \vspace{-0.3cm}
+    \color[RGB]{112, 0, 0}{\textbf{SQL ir deklaratīva programmēšanas valoda.}} \\ \pause 
+    \vspace{0.2cm}
+    \color[RGB]{112, 0, 0}{\textbf{T-SQL ir procedurāls programmēšanas kods.}}
+    \end{frame}
+
+
+\section{SQL datu tipi}
+       
+    
+    
+   
+ 
+% (T-SQL SSMS vidē).
+
+%SQL ir deklaratīva programmēšanas valoda.
+%T-SQL ir procedurāla programmēšanas valoda.
+
+
+
+        
+%        \item Produces a \texttt{pdf}: no problems with fonts, formulas, program versions
+%            \item Easier to keep consistent style, fonts, highlighting, etc.
+%            \item Math typesetting in \TeX\ is the best:
+%            \begin{equation*}
+%                \mathrm{i}\,\hslash\frac{\partial}{\partial t} \Psi(\mathbf{r},t) =
+%            -\frac{\hslash^2}{2\,m}\nabla^2\Psi(\mathbf{r},t)
+%            + V(\mathbf{r})\Psi(\mathbf{r},t)
+%            \end{equation*}
+
+
+    \begin{frame}[fragile]{Datu tipi}
+        \vspace{0.5cm}
+        Tabula \texttt{\color[RGB]{1, 0, 92}{Uznemumu\_darbinieki}} nes informāciju par darbinieku skaitu uzņēmumos.
+        \begin{block}{Darbinieku skaits uzņēmumos}
+            \begin{lstlisting}[language=SQL]
+CREATE TABLE Uznemumu_darbinieki (
+    uznemuma_nosaukums_txt varchar(4),
+    darbinieku_skaits_num int,
+    pazime char(4)
+)\end{lstlisting}
+        \end{block}
+    \end{frame}
+
+        \begin{frame}[fragile]{Datu tipi}
+        \vspace{0.5cm}
+        Tabula \texttt{\color[RGB]{1, 0, 92}{Uznemumu\_darbinieki}} nes sekojošas vērtības.
+        \vspace{0.5cm}
+        \begin{block}{Darbinieku skaits uzņēmumos}
+            \begin{lstlisting}[language=SQL]
+INSERT INTO Uznemumu_darbinieki (uznemuma_id, uznemuma_nosaukums_txt, darbinieku_skaits_num)
+VALUES (1, 'UZN1', 10), 
+       (2, 'UZN2', 25), 
+       (3, 'UZN3', 0)
+    \end{lstlisting}
+    \end{block}
+    \end{frame}
+
+    
+        \begin{frame}[fragile]{Datu tipi}
+        \vspace{0.5cm}
+        Tabula \texttt{\color[RGB]{1, 0, 92}{Uznemumu\_darbinieki}} nes sekojošas vērtības.
+        \vspace{0.5cm}
+        \begin{block}{Darbinieku skaits uzņēmumos}
+            \begin{lstlisting}[language=SQL]
+INSERT INTO Uznemumu_darbinieki (uznemuma_id, uznemuma_nosaukums_txt, darbinieku_skaits_num)
+VALUES (1, 'UZN1', 10), 
+       (2, 'UZN2', 25), 
+       (3, 'UZN3', 0)
+    \end{lstlisting}
+    \end{block}
+    \end{frame}
+
+    
+
+    \begin{frame}[fragile]{Datu tipi}
+   \vspace*{0.5cm}
+    Tabula \texttt{\color[RGB]{1, 0, 92}{Uznemumu\_darbinieki}}.\\
+    \vspace*{0.3cm}
+    \includegraphics[width=13cm]{gallery/uznemumu_darbinieki.png}
+    \end{frame}
+
+        \begin{frame}[fragile]{Datu tipi}
+   \vspace*{0.5cm}
+    Tabula \texttt{\color[RGB]{1, 0, 92}{Uznemumu\_darbinieki}}.\\
+    \vspace*{0.3cm}
+    \includegraphics[width=12cm]{gallery/uznemumu_darbinieki1.png}
+    \end{frame}
+
+        \begin{frame}[fragile]{Datu tipi}
+   \vspace*{0.5cm}
+   \hspace*{1cm}
+    Tabula \texttt{\color[RGB]{1, 0, 92}{Uznemumu\_darbinieki}}.\\
+    \vspace*{0.3cm}
+    \hspace*{2cm}
+    \includegraphics[width=5cm]{gallery/VARCHAR.png}
+    \end{frame}
+
+   \begin{frame}[fragile]{Datu tipi}
+   \vspace*{0.5cm}
+   \hspace*{1cm}
+    Tabula \texttt{\color[RGB]{1, 0, 92}{Uznemumu\_darbinieki}}.\\
+    \vspace*{0.3cm}
+    \hspace*{2cm}
+    \includegraphics[width=5cm]{gallery/INT.png}
+    \end{frame}
+
+       \begin{frame}[fragile]{Datu tipi}
+   \vspace*{0.5cm}
+   \hspace*{1cm}
+    Tabula \texttt{\color[RGB]{1, 0, 92}{Uznemumu\_darbinieki}}.\\
+    \vspace*{0.3cm}
+    \hspace*{2cm}
+    \includegraphics[width=5cm]{gallery/CHAR.png}
+    \end{frame}
+
+    \begin{frame}[fragile]{Datu tipi}
+     \hspace*{1cm}
+     \vspace*{0.3cm}
+    \includegraphics[width=8cm]{gallery/uznemumu_darbinieki3.png} \pause
+    \vspace*{0.3cm}
+    \hspace*{4cm}
+    \includegraphics[width=3cm]{gallery/uznemumu_darbinieki4.png}\pause
+     \vspace*{0.3cm}
+     \hspace*{1cm}
+    \includegraphics[width=10cm]{gallery/uznemumu_darbinieki5.png}
+    \end{frame}
+
+        \begin{frame}[fragile]{Datu tipi}
+     \hspace*{1cm}
+     \vspace*{0.3cm}
+    \includegraphics[width=8cm]{gallery/vilciens ar cisternām.png} 
+     \vspace*{0.3cm}
+     \hspace*{1cm}
+    \includegraphics[width=10cm]{gallery/uznemumu_darbinieki5.png}
+    \end{frame}
+
+            \begin{frame}[fragile]{Datu tipi}
+     \hspace*{1cm}
+     \vspace*{0.3cm}
+    \includegraphics[width=10cm]{gallery/citernas ar datiem.png}
+    \end{frame}
+
+                \begin{frame}[fragile]{Datu tipi}
+     \hspace*{1cm}
+     \vspace*{0.3cm}
+    \includegraphics[width=10cm]{gallery/citernas ar datiem2.png}
+    \end{frame}
+
+    \begin{frame}[fragile]{Datu tipi}
+     \hspace*{1cm}
+     \vspace*{0.3cm}
+    \includegraphics[width=10cm]{gallery/citernas ar datiem3.png}
+    \end{frame}
+
+        \begin{frame}[fragile]{Datu tipi}
+     \hspace*{1cm}
+     \vspace*{0.3cm}
+    \includegraphics[width=10cm]{gallery/citernas ar datiem4.png}
+    \end{frame}
+
+    \begin{frame}[fragile]{Datu tipi}
+    \vspace{0.5cm}
+    Tabulā \texttt{\color[RGB]{1, 0, 92}{Uznemumu\_darbinieki}} tiek veikti labojumi.
+        \vspace{0.5cm}
+        \begin{block}{Darbinieku skaits uzņēmumos}
+            \begin{lstlisting}[language=SQL]
+UPDATE Uznemumu_darbinieki
+   SET darbinieku_skaits_num = NULL
+   WHERE darbinieku_skaits_num = 0
+    \end{lstlisting}
+    \end{block}
+    \end{frame}
+
+    \begin{frame}[fragile]{Datu tipi}
+   \vspace*{0.5cm}
+    Tabula \texttt{\color[RGB]{1, 0, 92}{Uznemumu\_darbinieki}}.\\
+    \vspace*{0.3cm}
+    \includegraphics[width=13cm]{gallery/TAB1.png}
+    \end{frame}
+    
+    \begin{frame}[fragile]{Datu tipi}
+    \includegraphics[width=13cm]{gallery/TAB2.png}
+    \end{frame}
+
+     \begin{frame}[fragile]{Datu tipi}
+     \hspace*{1cm}
+     \vspace*{-1.5cm}
+    \includegraphics[width=10cm]{gallery/cisternas2_ar_datiem.png} 
+     \vspace*{0.3cm}
+     \hspace*{1cm}
+    \includegraphics[width=10cm]{gallery/TAB4.png}
+    \end{frame}
+
+
+                \begin{frame}[fragile]{Datu tipi}
+     \hspace*{1cm}
+     \vspace*{0.3cm}
+    \includegraphics[width=10cm]{gallery/cisternas2_ar_datiem1.png}
+    \end{frame}
+
+    \begin{frame}[fragile]{Title page}
+        To set a typical title page, you call some commands in the preamble:
+        \begin{block}{The Commands for the Title Page}
+            \begin{lstlisting}[language=TeX]
+\title{Sample Title}
+\subtitle{Sample subtitle}
+\author{First Author, Second Author}
+\date{Defaults to today's}\end{lstlisting}
+        \end{block}
+        You can then write out the title page with \verb|\maketitle|.
+
+        You can set a different background image than the default one with the \verb|\titlebackground| command, set before \verb|\maketitle|.
+
+        In the \texttt{backgrounds} folder, you can find a lot of standard backgrounds for SINTEF presentation title pages.
+    \end{frame}
+
+    \begin{frame}[fragile]{Writing a Simple Slide}
+        \framesubtitle{It's really easy!}
+        \begin{itemize}[<+->]
+            \item A typical slide has bulleted lists
+            \item These can be uncovered in sequence
+        \end{itemize}
+        \begin{block}{Code for a Page with an Itemised List}<+->
+            \begin{lstlisting}[language=TeX]
+\begin{frame}
+    \frametitle{Writing a Simple Slide}
+    \framesubtitle{It's really easy!}
+    \begin{itemize}[<+->]
+        \item A typical slide has bulleted lists
+        \item These can be uncovered in sequence
+    \end{itemize}
+\end{frame}\end{lstlisting}
+        \end{block}
+    \end{frame}
+
+    \begin{frame}[fragile]{Adding images}
+        Adding images works like in normal \LaTeX:
+        \begin{columns}
+            \begin{column}{0.7\textwidth}
+                \begin{block}{Code for Adding Images}
+                    \begin{lstlisting}[language=TeX]
+\usepackage{graphicx}
+% ...
+\includegraphics
+[width=\textwidth]{gallery/img.jpg}
+                    \end{lstlisting}
+                \end{block}
+            \end{column}
+            \begin{column}{0.3\textwidth}
+                \vskip5pt\includegraphics[width=\textwidth]{gallery/img.jpg}
+            \end{column}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}[fragile]{Splitting in Columns}
+        Splitting the page is easy and common; typically, one side has a picture and the other text:
+        \begin{columns}
+            \begin{column}{0.6\textwidth}
+                This is the first column
+            \end{column}
+            \begin{column}{0.3\textwidth}
+                And this the second
+            \end{column}
+        \end{columns}
+        \begin{block}{Column Code}
+            \begin{lstlisting}[language=TeX]
+\begin{columns}
+        \begin{column}{0.6\textwidth}
+                This is the first column
+        \end{column}
+        \begin{column}{0.3\textwidth}
+                And this the second
+        \end{column}
+        % There could be more!
+\end{columns}\end{lstlisting}
+        \end{block}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \frametitle{Fonts}
+        \begin{itemize}
+            \item The paramount task of fonts is being readable
+            \item There are good ones...
+                \begin{itemize}
+                \item {\textrm{Use serif fonts only with high-definition projectors}}
+                \item {\textsf{Use sans-serif fonts otherwise (or if you simply prefer them)}}
+                \end{itemize}
+            \item ... and not so good ones:
+                \begin{itemize}
+                \item {\texttt{Never use monospace for normal text}}
+                \item {\frakfamily Gothic, calligraphic or weird fonts: should always: be
+                avoided}
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]{Look}
+        \begin{itemize}
+        \item To change the colour of the title dash, give one of the class options \texttt{cyandash} (default), \texttt{greendash}, \texttt{magentadash}, \texttt{yellowdash}, or \texttt{nodash}.
+        \item To change between the light and dark themes, give the class options \texttt{light} (default) or \texttt{dark}. It is not possible to switch theme for one slide because of the design of Beamer---and it's probably a good thing.
+        \item To insert a final slide, use \verb|\backmatter|.
+        \item The aspect ratio defaults to 16:9, but you can change it to 4:3 for old projectors by passing the class option \texttt{aspectratio=43}; any other values accepted by Beamer are also possible.
+        \end{itemize}
+    \end{frame}
+
+    \section{Summary}
+
+    \begin{frame}
+        \frametitle{Good Luck!}
+        \begin{itemize}
+            \item Enough for an introduction! You should know enough by now
+            \item If you have corrections or suggestions, \bhref{mailto:federico.zenith@sintef.no}{send them to me!}
+        \end{itemize}
+    \end{frame}
+
+    \QApage
+
+\end{document}
